@@ -10,10 +10,13 @@ app.use(express.json())
 app.use(cors())
 
 // Create Sequelize instance
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: './database.sqlite'
+const sequelize = new Sequelize('boms7mrd9jga5ga8pnvq', 'upfl3ptfdslrwahd', 'xG1niANWs4WBc1fZyR3o', {
+  host: 'boms7mrd9jga5ga8pnvq-mysql.services.clever-cloud.com', // Change this to your MySQL host
+  dialect: 'mysql',  // Specifies the MySQL dialect
+  port: 3306,        // Default MySQL port, change if needed
+  logging: false     // Optional: Disable SQL query logging to the console
 });
+
 
 // Define User model
 class User extends Model {}
